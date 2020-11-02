@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Contents/Styles/reset.css" rel="stylesheet" />
+    <link href="~/Contents/Styles/base.css" rel="stylesheet" />
+    <link href="~/Contents/Styles/style.css" rel="stylesheet" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="~/Contents/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Contents/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</head>
+<body>
+    <div id="pbLoginWrapper">
+        <div id="pbLoginPromo" class="pbLeft">
+            <img src="~/Contents/Images/mockup.png" />
+            <div class="pbImageCaption">
+                <h1 style="color: #ffffff !important; margin-bottom: 5px;">Phonebook Application</h1>
+                <p>Create and manage your contact list.</p>
+                <p>Built using ASP.NET MVC 5 and Entity Framework 6 technology.</p>
+                <p>Also used some design patterns :)</p>
+            </div>
+        </div>
+        <div id="pbLoginForm" class="pbRight">
+            <div id="pbLoginLogo">
+                <h1>MVC Phonebook</h1>
+            </div>
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

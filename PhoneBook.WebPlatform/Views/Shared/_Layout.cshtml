@@ -1,0 +1,143 @@
+﻿@using PhoneBook.WebPlatform.Helpers
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="~/Contents/Styles/reset.css" rel="stylesheet" />
+    <link href="~/Contents/Styles/base.css" rel="stylesheet" />
+    <link href="~/Contents/Styles/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <script src="~/Contents/Scripts/PbPopup.js"></script>
+    <link href="~/Contents/ModalBox/ModalBox.css" rel="stylesheet" />
+    <style>
+        #pbDashBoardWrapper {
+            width: 100%;
+            min-height: 600px;
+        }
+
+        .pbDashBoardTitle {
+            width: 100%;
+            background-color: #0072c6;
+            height: 50px;
+        }
+
+        .pbDashBoardTitleContent {
+            margin-left: 15%;
+            margin-right: 10%;
+            width: 75%;
+            padding: 10px 0;
+        }
+
+            .pbDashBoardTitleContent > div > h1 {
+                color: #ffffff !important;
+            }
+
+        .pbDashBoardFilter {
+            margin-left: 15%;
+            margin-right: 10%;
+            margin-top: 1%;
+            margin-bottom: 1%;
+            width: 75%;
+            height: 30px;
+        }
+
+            .pbDashBoardFilter > div {
+                display: inline-block;
+            }
+
+        #pbContactList {
+            margin-left: 15%;
+            margin-right: 10%;
+            width: 75%;
+            position: absolute;
+            height: 500px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .pbContactName {
+            font-weight: bold;
+        }
+
+        .pbContact {
+            width: 23%;
+            display: inline-block;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            background-color: #0072C6;
+        }
+
+            .pbContact > div {
+                padding: 5px 10px;
+                color: white;
+            }
+
+            .pbContact > img {
+                margin-left: 20%;
+                padding: 10px;
+                width: 50%;
+                height: 50%;
+            }
+
+
+        .pbTable {
+            display: table;
+            padding: 10px;
+        }
+
+
+        .pbTableHeading {
+            display: table-row;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .pbTableRow {
+            display: table-row;
+        }
+
+        .pbTableCell {
+            display: table-cell;
+            padding: 5px 10px;
+        }
+
+        .validation-summary-valid {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="pbDashBoardWrapper">
+        <div class="pbDashBoardTitle">
+            <div class="pbDashBoardTitleContent">
+                <div style="float: left;">
+                    <h1> Welcome! @PhoneBookSessionManager.LoggedInUserName </h1>
+                </div>
+                <div style="float: right;">
+                    <a href="#"><img src="~/Contents/Images/settings.png" title="Settings" alt="Settings" /></a>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="pbDashBoardFilter">
+            <div class="pbLeft" style="width: 33%;">
+                Sort By:
+                <select>
+                    <option>First Name</option>
+                    <option>Last Name</option>
+                    <option>Address</option>
+                </select>
+            </div>
+            <div class="pbLeft" style="width: 33%;">
+                <input type="button" id="pbBtnNewContact" value="+ Add New Contact" />
+            </div>
+            <div class="pbRight"><input type="text" placeholder="Search Contact" /></div>
+        </div>
+        @RenderBody()
+    </div>
+</body>
+</html>

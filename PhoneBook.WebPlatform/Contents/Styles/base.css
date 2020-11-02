@@ -1,0 +1,62 @@
+﻿body {
+    font-family: "Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,sans-serif;
+    color: #000000;
+}
+
+input[type="button"], input[type="submit"], .pBtn {
+    background-color: #0072C6;
+    padding: 3px 12px 5px;
+    border: 0 none;
+    height: 2.142em;
+    min-width: 6em;
+    color: #ffffff;
+    margin-right: 5px;
+}
+
+    input[type="button"]:hover, input[type="submit"]:hover, .button:hover {
+        background-color: #1E82CC;
+    }
+
+.sBtn {
+    background-color: rgba(182, 182, 182, 0.7);
+    border: 0 none;
+    color: #212121;
+    height: 2.142em;
+    min-width: 6em;
+    padding: 3px 12px 5px;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 5px;
+    border: 1px solid #BABABA;
+    width: 250px;
+}
+
+    input[type="text"]:focus, input[type="password"]:focus {
+        border: 1px solid #000000;
+    }
+
+select {
+    border: 1px solid #bababa;
+    height: 30px;
+    padding: 4px;
+    min-width: 100px;
+}
+
+h1 {
+    font-size: 31px;
+    line-height: 29px;
+    margin: 0;
+    padding: 0;
+    color: #1e82cc;
+    font-weight: 100;
+}
+
+a {
+    text-decoration: none;
+    color: #0072c6;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }

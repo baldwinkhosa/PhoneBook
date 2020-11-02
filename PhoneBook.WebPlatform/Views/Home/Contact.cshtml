@@ -1,0 +1,67 @@
+﻿@model PhoneBook.WebPlatform.ViewModels.ContactViewModel
+<script src="~/Contents/Scripts/jquery.validate.min.js"></script>
+<script src="~/Contents/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@using (@Html.BeginForm("CreateNewContact", "Home", FormMethod.Post, new { @id = "createContact" }))
+{
+    @Html.ValidationSummary(false, "You tried to submit form with invalid data.")
+        <div class="pbTable">
+            <div class="pbTableRow">
+                <div class="pbTableCell">
+                    @Html.LabelFor(m => m.FirstName)
+                </div>
+                <div class="pbTableCell">
+                    @Html.EditorFor(m => m.FirstName)
+                </div>
+            </div>
+            <div class="pbTableRow">
+                <div class="pbTableCell">
+                    @Html.LabelFor(m => m.MiddleName)
+                </div>
+                <div class="pbTableCell">
+                    @Html.EditorFor(m => m.MiddleName)
+                </div>
+            </div>
+            <div class="pbTableRow">
+                <div class="pbTableCell">
+                    @Html.LabelFor(m => m.LastName)
+                </div> 
+                <div class="pbTableCell">
+                    @Html.EditorFor(m => m.LastName)
+                </div>
+            </div>
+            <div class="pbTableRow">
+                <div class="pbTableCell">
+                    @Html.LabelFor(m => m.HomePhone)
+                </div> 
+                <div class="pbTableCell">
+                    @Html.EditorFor(m => m.HomePhone)
+                </div>
+            </div>
+            <div class="pbTableRow">
+                <div class="pbTableCell">
+                    @Html.LabelFor(m => m.MobilePhone)
+                </div> 
+                <div class="pbTableCell">
+                    @Html.EditorFor(m => m.MobilePhone)
+                </div>
+            </div>
+             <div class="pbTableRow">
+                <div class="pbTableCell">
+                    @Html.LabelFor(m => m.Address)
+                </div>
+                <div class="pbTableCell">
+                    @Html.EditorFor(m => m.Address)
+                </div>
+             </div>
+             <div class="pbTableRow">
+                <div class="pbTableCell"></div>
+                <div class="pbTableCell">
+                    <input type="submit" value="Add Contact" />
+                </div>
+             </div>
+        </div>
+}
+<script type="text/javascript">
+    $("#newp").click(function () {
+        $.modalBox({ url: "/Home/NewPopup" });
+    });</script>

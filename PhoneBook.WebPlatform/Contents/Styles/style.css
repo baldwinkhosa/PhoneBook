@@ -1,0 +1,93 @@
+﻿#pbLoginWrapper {
+    height: 99%;
+    margin-top: 1%;
+}
+
+.pbLeft {
+    float: left;
+}
+
+.pbRight {
+    float: right;
+}
+
+#pbLoginPromo {
+    width: 38%;
+    margin-left: 5%;
+}
+
+.pbImageCaption {
+    background-color: #0072C6;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 15px;
+    width: 95%;
+}
+
+    .pbImageCaption p {
+        margin: 5px 0;
+    }
+
+#pbLoginForm {
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 7%;
+}
+
+#pbLoginLogo {
+    padding-bottom: 10px;
+}
+
+.pbFormTitle {
+    color: #A6A6A6;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+/*input[type="button"], input[type="submit"] {
+            display: inline-block;
+            font-family: "Segoe UI Web Semibold","Segoe UI Web Regular","Segoe UI","Helvetica Neue",Arial;
+            font-size: 13px;
+            font-weight: 100;
+            line-height: 10px;
+            padding: 6px 7px;
+            color: #0072C6;
+        }*/
+#pbLoginForm table td {
+    padding: 3px 5px;
+}
+
+.frmLabel {
+    padding-bottom: 5px !important;
+}
+
+.field-validation-error {
+    font-size: 12px;
+    color: red;
+    padding: 0;
+    margin: 0;
+}
+
+p.hint {
+    color: #C85305;
+    font-size: 12px;
+    margin: 4px 0 0;
+}
+
+.validation-summary-errors {
+    border-bottom: 1px solid #a6a6a6;
+    border-left: 0;
+    border-right: 0;
+    color: #c85305;
+    font-size: 12px;
+    padding: 5px;
+}
+
+    .validation-summary-errors > ul > li {
+        padding: 5px;
+        font-style: italic;
+    }
+
+    .validation-summary-errors > span {
+        font-weight: bold;
+        padding: 5px;
+    }

@@ -1,0 +1,29 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PhoneBook.WebPlatform.ViewModels.ContactViewModel
+<div id="pbContactList">
+    @for (int i = 0; i < 10; i++)
+    {
+        <div class="pbContact">
+            <img src="" />
+            <div class="pbContactName">Baldwin</div>
+            <div class="pbContactPhone">0730993433</div>
+            <div class="pbContactEmail">baldwinkhosa@gmail.com</div>
+            <div class="pbContactAddress">123 Lehlabile Street</div>
+        </div>
+     }
+</div>
+
+<script>$(document).ready(function () {
+        $('#pbBtnNewContact').click(function () {
+            $.modalBox({
+                url: "/Home/CreateNewContact",
+                height: "300px",
+                width: "450px",
+                draggable: true,
+            });
+        });
+    });
+</script>
+

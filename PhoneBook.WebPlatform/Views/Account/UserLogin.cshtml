@@ -1,0 +1,66 @@
+﻿@model PhoneBook.WebPlatform.ViewModels.ApplicationUserViewModel
+@{ 
+    Layout = "~/Views/Shared/_LoginSignup.cshtml";
+}
+@{ 
+    string userName = string.Empty;
+    if (!string.IsNullOrEmpty(ViewBag.UserName))
+    {
+        userName = ViewBag.UserName;
+    } 
+}
+<div class="pbFormTitle">Login to your Phonebook.</div>
+@using (@Html.BeginForm("UserLogin", "Account"))
+{
+    <table>
+        <tr>
+            <td>
+                 @Html.ValidationMessageFor(m => m.UserName)
+                 @if (ViewData.ModelState.ContainsKey("InvalidLogin"))
+                 {
+                    @Html.ValidationMessage("InvalidLogin")                
+                 }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                 @Html.LabelFor(m => m.UserName, new { @class = "frmLabel" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                 @Html.TextBoxFor(m => m.UserName, @userName, new { @class = "frmTextBox", Value = @userName })
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                 @Html.ValidationMessageFor(m => m.Password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                 @Html.LabelFor(m => m.Password, new { @class = "frmLabel" })<br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.PasswordFor(m => m.Password, new { @class = "frmTextBox" })
+            </td>
+
+        </tr>
+        <tr>
+            <td><input type="submit" value="Login" /></td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Forgot Password?", "ForgotPassword", "Account")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                 Don't have account.@Html.ActionLink("Sign Up?", "CreateUser", "Account")
+            </td>
+        </tr>
+</table>
+}

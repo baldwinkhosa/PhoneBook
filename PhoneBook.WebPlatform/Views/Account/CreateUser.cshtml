@@ -1,0 +1,140 @@
+﻿@model PhoneBook.WebPlatform.ViewModels.UserViewModel
+@{
+    Layout = "~/Views/Shared/_LoginSignup.cshtml";
+}
+@{
+    string captchaQuestion = @Session["CaptchaQuestion"] as string;
+    string successMsg = TempData["UserCreated"] as string;
+    string userName = TempData["UserName"] as string;
+}
+
+<div class="pbFormTitle">Enter your details create your account. </div>
+@using (@Html.BeginForm("CreateUser", "Account"))
+{
+    @Html.ValidationSummary(true)
+    <table>
+        @if (!@String.IsNullOrEmpty(successMsg))                 
+        {
+            <tr>
+                <td colspan="2">
+                    <p class="hint">
+                        @successMsg
+                        @if (!string.IsNullOrEmpty(userName))
+                        {
+                            @Html.ActionLink("Login Now?", "UserLogin", "Account", new { user = @userName }, null)
+                        }
+                    </p>
+                </td>
+             </tr>
+         }
+         <tr>
+            <td>@Html.ValidationMessageFor(m => m.FirstName)</td>
+         </tr>
+         <tr>
+            <td>
+                @Html.LabelFor(m => m.FirstName, new { @class = "frmLabel" })
+            </td>
+            <td>
+                @Html.LabelFor(m => m.MiddleName, new { @class = "frmLabel" })
+            </td>
+         </tr>
+         <tr>
+            <td>
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "frmTextBox" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.MiddleName, new { @class = "frmTextBox" })
+            </td>
+         </tr>
+         <tr>
+            <td>@Html.ValidationMessageFor(m => m.LastName)</td>
+         </tr>
+         <tr>
+            <td>
+                @Html.LabelFor(m => m.LastName, new { @class = "frmLabel" })
+            </td>
+         </tr>
+         <tr>
+            <td>
+                @Html.TextBoxFor(m => m.LastName, new { @class = "frmTextBox" })
+            </td>
+         </tr>
+         <tr>
+            <td>@Html.ValidationMessageFor(m => m.UserName)</td>
+            <td>@Html.ValidationMessageFor(m => m.Email)</td>
+         </tr>
+
+         <tr>
+            <td>
+                @Html.LabelFor(m => m.UserName, new { @class = "frmLabel" })
+            </td>
+            <td>
+                @Html.LabelFor(m => m.Email, new { @class = "frmLabel" })
+            </td>
+         </tr>
+
+         <tr>
+            <td>
+                @Html.TextBoxFor(m => m.UserName, new { @class = "frmTextBox" })
+                <p class="hint">Minimum 5 characters.</p>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Email, new { @class = "frmTextBox" })
+            </td>
+         </tr>
+         <tr>
+            <td>@Html.ValidationMessageFor(m => m.Password)</td>
+            <td>@Html.ValidationMessageFor(m => m.ConfirmPassword)</td>
+         </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Password, new { @class = "frmLabel" })
+            </td>
+            <td>
+                @Html.LabelFor(m => m.ConfirmPassword)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBoxFor(m => m.Password, new { @class = "frmTextBox" })
+                <p class="hint">Minimum 8 characters.</p>
+                <p class="hint">1 special character 1 number.</p>
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.ConfirmPassword)
+            </td>
+        </tr>
+        <tr>
+            @if (!ViewData.ModelState.IsValid)
+             {
+                <td>@Html.ValidationMessage("invalidCaptcha")</td>
+             }
+        </tr>
+        <tr>
+            <td>@Html.ValidationMessageFor(m => m.CaptchaAnswer)</td>
+        </tr>
+        <tr>
+            <td>
+
+             Prove that you are not a robot.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @captchaQuestion
+                <p class="hint">Answer should be in text. E.g. seven,ten</p>
+            </td>
+        </tr>
+        <tr>
+
+            <td>
+                @Html.TextBoxFor(m => m.CaptchaAnswer)
+            </td>
+        </tr>
+        <tr>
+            <td> <input type="submit" value="Create" /></td>
+        </tr>
+    </table>
+ }
